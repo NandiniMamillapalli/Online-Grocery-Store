@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Fresh Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: #ff6f61;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .confirmation-box {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .confirmation-box i {
+            font-size: 50px;
+            color: #28a745;
+        }
+        
+        .order-summary,
+        .delivery-details {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background: #e65a50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Fresh Mart - Order Confirmation</div>
+
+    <div class="container">
+        <div class="confirmation-box">
+            <i class="fas fa-check-circle"></i>
+            <h1>Thank You!</h1>
+            <p>Your order has been successfully placed.</p>
+            <p><strong>Order ID:</strong> FM123456789</p>
+        </div>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Bananas - $3.99</p>
+            <p>Apples - $6.99</p>
+            <p>Milk - $5.49</p>
+            <p><strong>Total: $16.47</strong></p>
+        </div>
+
+        <div class="delivery-details">
+            <h2>Delivery Details</h2>
+            <p><strong>John Doe</strong></p>
+            <p>123 Green Street, LA</p>
+            <p>Estimated Delivery: <strong>February 5, 2025</strong></p>
+        </div>
+
+        <div class="text-center">
+            <a href="index.html" class="btn">Back to Home</a>
+            <a href="#" class="btn">Track Order</a>
+        </div>
+    </div>
+</body>
+
+</html>
