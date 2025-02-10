@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Fresh Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Fresh Mart</div>
+            <div class="nav-links">
+                <a href="index.php">Home</a>
+                <a href="about.html">About</a>
+                <a href="recipes.html">Recipes</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="blog-page">
+        <section class="blog-hero">
+            <div class="container">
+                <h1>Fresh Mart Blog</h1>
+                <p>Discover tips, recipes, and stories about fresh food and healthy living</p>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="container">
+                <div class="blog-grid">
+                    <div class="blog-sidebar">
+                        <div class="search-widget">
+                            <input type="text" placeholder="Search articles...">
+                            <button><i class="fas fa-search"></i></button>
+                        </div>
+
+                        <div class="category-widget">
+                            <h3>Categories</h3>
+                            <ul>
+                                <li><a href="#" data-category="all">All Posts</a></li>
+                                <li><a href="#" data-category="nutrition">Nutrition</a></li>
+                                <li><a href="#" data-category="recipes">Recipes</a></li>
+                                <li><a href="#" data-category="tips">Shopping Tips</a></li>
+                                <li><a href="#" data-category="lifestyle">Healthy Lifestyle</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="popular-posts">
+                            <h3>Popular Posts</h3>
+                            <div class="popular-post-item">
+                                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Popular Post">
+                                <div class="popular-post-content">
+                                    <h4>5 Super Foods You Need</h4>
+                                    <p>2 days ago</p>
+                                </div>
+                            </div>
+                            <div class="popular-post-item">
+                                <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38" alt="Popular Post">
+                                <div class="popular-post-content">
+                                    <h4>Meal Prep Guide</h4>
+                                    <p>5 days ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-main">
+                        <article class="blog-post">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Blog Post">
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span><i class="fas fa-user"></i> By Admin</span>
+                                    <span><i class="fas fa-calendar"></i> January 30, 2025</span>
+                                    <span><i class="fas fa-comments"></i> 5 Comments</span>
+                                </div>
+                                <h2>10 Tips for Smart Grocery Shopping</h2>
+                                <p>Learn how to make the most of your grocery shopping trips with these expert tips...</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-post">
+                            <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38" alt="Blog Post">
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span><i class="fas fa-user"></i> By Admin</span>
+                                    <span><i class="fas fa-calendar"></i> January 28, 2025</span>
+                                    <span><i class="fas fa-comments"></i> 3 Comments</span>
+                                </div>
+                                <h2>Seasonal Produce Guide: Winter Edition</h2>
+                                <p>Discover what fruits and vegetables are in season this winter and how to use them...</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-post">
+                            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352" alt="Blog Post">
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span><i class="fas fa-user"></i> By Admin</span>
+                                    <span><i class="fas fa-calendar"></i> January 25, 2025</span>
+                                    <span><i class="fas fa-comments"></i> 7 Comments</span>
+                                </div>
+                                <h2>How to Store Fresh Produce Longer</h2>
+                                <p>Expert tips on keeping your fruits and vegetables fresh for extended periods...</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </article>
+
+                        <div class="pagination">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#"><i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="container">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest blog posts and recipes delivered to your inbox!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@freshmart.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-links">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fresh Mart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Blog functionality
+        document.querySelectorAll('.category-widget a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.dataset.category;
+                // In a real application, this would filter blog posts by category
+                alert(`Filtering by ${category}`);
+            });
+        });
+
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, this would subscribe the user to the newsletter
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
