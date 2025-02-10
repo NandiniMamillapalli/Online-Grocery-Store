@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Fresh Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Fresh Mart</div>
+            <div class="nav-links">
+                <a href="index.php">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-details-page">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt;
+                <a href="products.html">Products</a> &gt;
+                <span>Organic Bananas</span>
+            </div>
+
+            <div class="product-details-grid">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24" alt="Organic Bananas" id="mainImage">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24" alt="Banana Image 1" onclick="changeImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24" alt="Banana Image 2" onclick="changeImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24" alt="Banana Image 3" onclick="changeImage(this.src)">
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1>Organic Bananas</h1>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(128 reviews)</span>
+                        </div>
+                        <span class="stock-status in-stock">
+                            <i class="fas fa-check-circle"></i> In Stock
+                        </span>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price">$4.99</span>
+                        <span class="per-unit">per bunch</span>
+                        <span class="original-price">$5.99</span>
+                        <span class="discount-tag">17% OFF</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p>Fresh, organic bananas sourced directly from certified organic farms. Rich in potassium and perfect for smoothies, baking, or as a healthy snack.</p>
+                        
+                        <div class="product-features">
+                            <h3>Product Features:</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 100% Organic Certified</li>
+                                <li><i class="fas fa-check"></i> Non-GMO</li>
+                                <li><i class="fas fa-check"></i> Rich in Potassium</li>
+                                <li><i class="fas fa-check"></i> Ethically Sourced</li>
+                            </ul>
+                        </div>
+
+                        <div class="nutrition-info">
+                            <h3>Nutrition Information</h3>
+                            <table>
+                                <tr>
+                                    <td>Calories:</td>
+                                    <td>105 kcal</td>
+                                </tr>
+                                <tr>
+                                    <td>Protein:</td>
+                                    <td>1.3g</td>
+                                </tr>
+                                <tr>
+                                    <td>Carbohydrates:</td>
+                                    <td>27g</td>
+                                </tr>
+                                <tr>
+                                    <td>Potassium:</td>
+                                    <td>422mg</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="purchase-options">
+                        <div class="quantity-selector">
+                            <button onclick="updateQuantity(-1)">-</button>
+                            <input type="number" value="1" min="1" id="quantity">
+                            <button onclick="updateQuantity(1)">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button class="add-to-wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="delivery-info">
+                        <div class="delivery-option">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Free Delivery</h4>
+                                <p>On orders over $50</p>
+                            </div>
+                        </div>
+                        <div class="delivery-option">
+                            <i class="fas fa-undo"></i>
+                            <div>
+                                <h4>Easy Returns</h4>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="showTab('description')">Description</button>
+                    <button class="tab-btn" onclick="showTab('reviews')">Reviews</button>
+                    <button class="tab-btn" onclick="showTab('shipping')">Shipping</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="description" class="tab-pane active">
+                        <h3>Product Description</h3>
+                        <p>Our organic bananas are carefully selected from certified organic farms that follow sustainable farming practices. Each bunch is hand-picked at the perfect ripeness to ensure the best quality and taste.</p>
+                        <p>These bananas are perfect for:</p>
+                        <ul>
+                            <li>Healthy snacking</li>
+                            <li>Smoothies and shakes</li>
+                            <li>Baking</li>
+                            <li>Natural sweetener</li>
+                        </ul>
+                    </div>
+
+                    <div id="reviews" class="tab-pane">
+                        <h3>Customer Reviews</h3>
+                        <div class="review-summary">
+                            <div class="average-rating">
+                                <h4>4.5</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Based on 128 reviews</p>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <span>5 stars</span>
+                                    <div class="bar"><div style="width: 70%"></div></div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 stars</span>
+                                    <div class="bar"><div style="width: 20%"></div></div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 stars</span>
+                                    <div class="bar"><div style="width: 7%"></div></div>
+                                    <span>7%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 stars</span>
+                                    <div class="bar"><div style="width: 2%"></div></div>
+                                    <span>2%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 star</span>
+                                    <div class="bar"><div style="width: 1%"></div></div>
+                                    <span>1%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="customer-reviews">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80" alt="Reviewer">
+                                        <div>
+                                            <h4>Sarah Johnson</h4>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 days ago</span>
+                                </div>
+                                <p class="review-text">These bananas are always fresh and perfectly ripened. Great for my morning smoothies!</p>
+                            </div>
+                            <!-- More review items -->
+                        </div>
+                    </div>
+
+                    <div id="shipping" class="tab-pane">
+                        <h3>Shipping Information</h3>
+                        <div class="shipping-info">
+                            <div class="shipping-option">
+                                <h4>Standard Delivery</h4>
+                                <p>2-3 business days</p>
+                                <p>Free for orders over $50</p>
+                                <p>$4.99 for orders under $50</p>
+                            </div>
+                            <div class="shipping-option">
+                                <h4>Express Delivery</h4>
+                                <p>Next business day</p>
+                                <p>$9.99</p>
+                            </div>
+                            <div class="shipping-note">
+                                <p>* Delivery times may vary based on location</p>
+                                <p>* Orders placed after 2 PM will be processed the next business day</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-products">
+                <h2>You May Also Like</h2>
+                <div class="related-products-grid">
+                    <!-- Related products will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@freshmart.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-links">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fresh Mart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+
+        function updateQuantity(change) {
+            const input = document.getElementById('quantity');
+            const newValue = parseInt(input.value) + change;
+            if (newValue >= 1) {
+                input.value = newValue;
+            }
+        }
+
+        function showTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-pane').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
