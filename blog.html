@@ -24,7 +24,7 @@
         </nav>
     </header>
 
-    <main class="blog-page">
+    <main class="blog-page" style="overflow-x: hidden;">
         <section class="blog-hero">
             <div class="container">
                 <h1>Fresh Mart Blog</h1>
@@ -68,6 +68,13 @@
                                     <p>5 days ago</p>
                                 </div>
                             </div>
+                            <div class="popular-post-item" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af" alt="Popular Post">
+                                <div class="popular-post-content">
+                                    <h4>Organic Food Guide</h4>
+                                    <p>1 week ago</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -78,11 +85,33 @@
                                 <div class="post-meta">
                                     <span><i class="fas fa-user"></i> By Admin</span>
                                     <span><i class="fas fa-calendar"></i> January 30, 2025</span>
-                                    <span><i class="fas fa-comments"></i> 5 Comments</span>
                                 </div>
                                 <h2>10 Tips for Smart Grocery Shopping</h2>
                                 <p>Learn how to make the most of your grocery shopping trips with these expert tips...</p>
-                                <a href="#" class="read-more">Read More</a>
+                                <div class="post-interactions" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                                    <button class="like-btn" style="background: none; border: none; color: #666; cursor: pointer; margin-right: 15px; transition: all 0.3s ease;">
+                                        <i class="far fa-heart"></i> <span>0</span> Likes
+                                    </button>
+                                    <button class="comment-btn" style="background: none; border: none; color: #666; cursor: pointer; transition: all 0.3s ease;">
+                                        <i class="far fa-comment"></i> Comments
+                                    </button>
+                                    
+                                    <div class="comments-section" style="display: none; margin-top: 15px;">
+                                        <div class="comments-list" style="margin-bottom: 15px;"></div>
+                                        <form class="comment-form" style="display: flex; gap: 10px;">
+                                            <input type="text" placeholder="Add a comment..." 
+                                                   style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; transition: all 0.3s ease;"
+                                                   onfocus="this.style.borderColor='#4CAF50'"
+                                                   onblur="this.style.borderColor='#ddd'">
+                                            <button type="submit" 
+                                                    style="padding: 8px 15px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;"
+                                                    onmouseover="this.style.backgroundColor='#45a049'"
+                                                    onmouseout="this.style.backgroundColor='#4CAF50'">
+                                                Post
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </article>
 
@@ -92,11 +121,33 @@
                                 <div class="post-meta">
                                     <span><i class="fas fa-user"></i> By Admin</span>
                                     <span><i class="fas fa-calendar"></i> January 28, 2025</span>
-                                    <span><i class="fas fa-comments"></i> 3 Comments</span>
                                 </div>
                                 <h2>Seasonal Produce Guide: Winter Edition</h2>
                                 <p>Discover what fruits and vegetables are in season this winter and how to use them...</p>
-                                <a href="#" class="read-more">Read More</a>
+                                <div class="post-interactions" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                                    <button class="like-btn" style="background: none; border: none; color: #666; cursor: pointer; margin-right: 15px; transition: all 0.3s ease;">
+                                        <i class="far fa-heart"></i> <span>0</span> Likes
+                                    </button>
+                                    <button class="comment-btn" style="background: none; border: none; color: #666; cursor: pointer; transition: all 0.3s ease;">
+                                        <i class="far fa-comment"></i> Comments
+                                    </button>
+                                    
+                                    <div class="comments-section" style="display: none; margin-top: 15px;">
+                                        <div class="comments-list" style="margin-bottom: 15px;"></div>
+                                        <form class="comment-form" style="display: flex; gap: 10px;">
+                                            <input type="text" placeholder="Add a comment..." 
+                                                   style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; transition: all 0.3s ease;"
+                                                   onfocus="this.style.borderColor='#4CAF50'"
+                                                   onblur="this.style.borderColor='#ddd'">
+                                            <button type="submit" 
+                                                    style="padding: 8px 15px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;"
+                                                    onmouseover="this.style.backgroundColor='#45a049'"
+                                                    onmouseout="this.style.backgroundColor='#4CAF50'">
+                                                Post
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </article>
 
@@ -106,20 +157,107 @@
                                 <div class="post-meta">
                                     <span><i class="fas fa-user"></i> By Admin</span>
                                     <span><i class="fas fa-calendar"></i> January 25, 2025</span>
-                                    <span><i class="fas fa-comments"></i> 7 Comments</span>
                                 </div>
                                 <h2>How to Store Fresh Produce Longer</h2>
                                 <p>Expert tips on keeping your fruits and vegetables fresh for extended periods...</p>
-                                <a href="#" class="read-more">Read More</a>
+                                <div class="post-interactions" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                                    <button class="like-btn" style="background: none; border: none; color: #666; cursor: pointer; margin-right: 15px; transition: all 0.3s ease;">
+                                        <i class="far fa-heart"></i> <span>0</span> Likes
+                                    </button>
+                                    <button class="comment-btn" style="background: none; border: none; color: #666; cursor: pointer; transition: all 0.3s ease;">
+                                        <i class="far fa-comment"></i> Comments
+                                    </button>
+                                    
+                                    <div class="comments-section" style="display: none; margin-top: 15px;">
+                                        <div class="comments-list" style="margin-bottom: 15px;"></div>
+                                        <form class="comment-form" style="display: flex; gap: 10px;">
+                                            <input type="text" placeholder="Add a comment..." 
+                                                   style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; transition: all 0.3s ease;"
+                                                   onfocus="this.style.borderColor='#4CAF50'"
+                                                   onblur="this.style.borderColor='#ddd'">
+                                            <button type="submit" 
+                                                    style="padding: 8px 15px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;"
+                                                    onmouseover="this.style.backgroundColor='#45a049'"
+                                                    onmouseout="this.style.backgroundColor='#4CAF50'">
+                                                Post
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </article>
 
-                        <div class="pagination">
-                            <a href="#" class="active">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#"><i class="fas fa-chevron-right"></i></a>
-                        </div>
+                        <article class="blog-post" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+                            <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af" alt="Blog Post" style="width: 100%; transition: transform 0.3s ease;">
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span><i class="fas fa-user"></i> By Admin</span>
+                                    <span><i class="fas fa-calendar"></i> January 23, 2025</span>
+                                </div>
+                                <h2>Organic vs. Conventional: Making the Right Choice</h2>
+                                <p>Understanding the differences between organic and conventional produce to make informed decisions...</p>
+                                <div class="post-interactions" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                                    <button class="like-btn" style="background: none; border: none; color: #666; cursor: pointer; margin-right: 15px; transition: all 0.3s ease;">
+                                        <i class="far fa-heart"></i> <span>0</span> Likes
+                                    </button>
+                                    <button class="comment-btn" style="background: none; border: none; color: #666; cursor: pointer; transition: all 0.3s ease;">
+                                        <i class="far fa-comment"></i> Comments
+                                    </button>
+                                    
+                                    <div class="comments-section" style="display: none; margin-top: 15px;">
+                                        <div class="comments-list" style="margin-bottom: 15px;"></div>
+                                        <form class="comment-form" style="display: flex; gap: 10px;">
+                                            <input type="text" placeholder="Add a comment..." 
+                                                   style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; transition: all 0.3s ease;"
+                                                   onfocus="this.style.borderColor='#4CAF50'"
+                                                   onblur="this.style.borderColor='#ddd'">
+                                            <button type="submit" 
+                                                    style="padding: 8px 15px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;"
+                                                    onmouseover="this.style.backgroundColor='#45a049'"
+                                                    onmouseout="this.style.backgroundColor='#4CAF50'">
+                                                Post
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+                            <img src="https://images.unsplash.com/photo-1506784693919-ef06d93c28d2" alt="Blog Post" style="width: 100%; transition: transform 0.3s ease;">
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span><i class="fas fa-user"></i> By Admin</span>
+                                    <span><i class="fas fa-calendar"></i> January 20, 2025</span>
+                                </div>
+                                <h2>Budget-Friendly Meal Planning</h2>
+                                <p>Learn how to create nutritious meals while staying within your budget...</p>
+                                <div class="post-interactions" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                                    <button class="like-btn" style="background: none; border: none; color: #666; cursor: pointer; margin-right: 15px; transition: all 0.3s ease;">
+                                        <i class="far fa-heart"></i> <span>0</span> Likes
+                                    </button>
+                                    <button class="comment-btn" style="background: none; border: none; color: #666; cursor: pointer; transition: all 0.3s ease;">
+                                        <i class="far fa-comment"></i> Comments
+                                    </button>
+                                    
+                                    <div class="comments-section" style="display: none; margin-top: 15px;">
+                                        <div class="comments-list" style="margin-bottom: 15px;"></div>
+                                        <form class="comment-form" style="display: flex; gap: 10px;">
+                                            <input type="text" placeholder="Add a comment..." 
+                                                   style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; transition: all 0.3s ease;"
+                                                   onfocus="this.style.borderColor='#4CAF50'"
+                                                   onblur="this.style.borderColor='#ddd'">
+                                            <button type="submit" 
+                                                    style="padding: 8px 15px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;"
+                                                    onmouseover="this.style.backgroundColor='#45a049'"
+                                                    onmouseout="this.style.backgroundColor='#4CAF50'">
+                                                Post
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -186,6 +324,262 @@
             // In a real application, this would subscribe the user to the newsletter
             alert('Thank you for subscribing to our newsletter!');
             this.reset();
+        });
+
+        // Add smooth transitions and animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fade in blog posts on scroll
+            const blogPosts = document.querySelectorAll('.blog-post');
+            blogPosts.forEach(post => {
+                post.style.opacity = '0';
+                post.style.transform = 'translateY(20px)';
+                post.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            blogPosts.forEach(post => observer.observe(post));
+
+            // Add hover effects to blog posts
+            blogPosts.forEach(post => {
+                post.addEventListener('mouseenter', () => {
+                    post.style.transform = 'translateY(-5px)';
+                    post.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
+                });
+
+                post.addEventListener('mouseleave', () => {
+                    post.style.transform = 'translateY(0)';
+                    post.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+                });
+            });
+
+            // Animate category links
+            const categoryLinks = document.querySelectorAll('.category-widget a');
+            categoryLinks.forEach(link => {
+                link.style.transition = 'color 0.3s ease, padding-left 0.3s ease';
+                
+                link.addEventListener('mouseenter', () => {
+                    link.style.paddingLeft = '10px';
+                    link.style.color = '#4CAF50';
+                });
+
+                link.addEventListener('mouseleave', () => {
+                    link.style.paddingLeft = '0';
+                    link.style.color = '';
+                });
+            });
+
+            // Animate popular post items
+            const popularPosts = document.querySelectorAll('.popular-post-item');
+            popularPosts.forEach(post => {
+                post.style.transition = 'transform 0.3s ease';
+                
+                post.addEventListener('mouseenter', () => {
+                    post.style.transform = 'translateX(5px)';
+                });
+
+                post.addEventListener('mouseleave', () => {
+                    post.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Add pulse animation to newsletter submit button
+            const subscribeButton = document.querySelector('.newsletter-form button');
+            subscribeButton.style.transition = 'transform 0.3s ease, background-color 0.3s ease';
+            
+            subscribeButton.addEventListener('mouseenter', () => {
+                subscribeButton.style.transform = 'scale(1.05)';
+            });
+
+            subscribeButton.addEventListener('mouseleave', () => {
+                subscribeButton.style.transform = 'scale(1)';
+            });
+
+            // Smooth transition for search input
+            const searchInput = document.querySelector('.search-widget input');
+            searchInput.style.transition = 'box-shadow 0.3s ease';
+            
+            searchInput.addEventListener('focus', () => {
+                searchInput.style.boxShadow = '0 0 10px rgba(76, 175, 80, 0.2)';
+            });
+
+            searchInput.addEventListener('blur', () => {
+                searchInput.style.boxShadow = 'none';
+            });
+
+            // Add reading time estimate to blog posts
+            document.querySelectorAll('.blog-post').forEach(post => {
+                const wordCount = post.querySelector('p').textContent.split(' ').length;
+                const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute
+                const timeSpan = document.createElement('span');
+                timeSpan.innerHTML = `<i class="fas fa-clock"></i> ${readingTime} min read`;
+                timeSpan.style.marginLeft = '15px';
+                post.querySelector('.post-meta').appendChild(timeSpan);
+            });
+
+            // Add like button functionality
+            document.querySelectorAll('.blog-post').forEach(post => {
+                const likeBtn = document.createElement('button');
+                likeBtn.innerHTML = '<i class="far fa-heart"></i> <span>0</span>';
+                likeBtn.style.cssText = `
+                    border: none;
+                    background: none;
+                    color: #666;
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    margin-top: 10px;
+                    transition: all 0.3s ease;
+                `;
+                
+                let liked = false;
+                let likes = 0;
+                
+                likeBtn.addEventListener('click', () => {
+                    liked = !liked;
+                    likes = liked ? likes + 1 : likes - 1;
+                    likeBtn.innerHTML = `<i class="${liked ? 'fas' : 'far'} fa-heart"></i> <span>${likes}</span>`;
+                    likeBtn.style.color = liked ? '#ff4444' : '#666';
+                    
+                    // Add heart animation
+                    if (liked) {
+                        likeBtn.style.transform = 'scale(1.2)';
+                        setTimeout(() => {
+                            likeBtn.style.transform = 'scale(1)';
+                        }, 200);
+                    }
+                });
+                
+                post.querySelector('.post-content').appendChild(likeBtn);
+            });
+
+            // Add image zoom effect on hover
+            document.querySelectorAll('.blog-post img').forEach(img => {
+                img.addEventListener('mouseenter', () => {
+                    img.style.transform = 'scale(1.05)';
+                });
+                
+                img.addEventListener('mouseleave', () => {
+                    img.style.transform = 'scale(1)';
+                });
+            });
+
+            // Add scroll progress indicator
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background: #4CAF50;
+                z-index: 1000;
+                transition: width 0.2s ease;
+            `;
+            document.body.appendChild(progressBar);
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        });
+
+        // Blog interactions functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize blog post interactions
+            document.querySelectorAll('.blog-post').forEach((post, index) => {
+                const likeBtn = post.querySelector('.like-btn');
+                const commentBtn = post.querySelector('.comment-btn');
+                const commentsSection = post.querySelector('.comments-section');
+                const commentsList = post.querySelector('.comments-list');
+                const commentForm = post.querySelector('.comment-form');
+                
+                let likes = 0;
+                let isLiked = false;
+                let comments = [];
+
+                // Like button functionality
+                likeBtn.addEventListener('click', () => {
+                    isLiked = !isLiked;
+                    likes = isLiked ? likes + 1 : likes - 1;
+                    likeBtn.innerHTML = `<i class="${isLiked ? 'fas' : 'far'} fa-heart" style="color: ${isLiked ? '#ff4444' : '#666'}"></i> <span>${likes}</span> Likes`;
+                    
+                    // Add heart animation
+                    if (isLiked) {
+                        likeBtn.style.transform = 'scale(1.2)';
+                        setTimeout(() => likeBtn.style.transform = 'scale(1)', 200);
+                    }
+                });
+
+                // Comment button functionality
+                commentBtn.addEventListener('click', () => {
+                    const isVisible = commentsSection.style.display === 'block';
+                    commentsSection.style.display = isVisible ? 'none' : 'block';
+                    
+                    if (!isVisible) {
+                        commentsSection.style.animation = 'slideDown 0.3s ease';
+                    }
+                });
+
+                // Comment form functionality
+                commentForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const input = commentForm.querySelector('input');
+                    const commentText = input.value.trim();
+                    
+                    if (commentText) {
+                        const comment = {
+                            text: commentText,
+                            date: new Date().toLocaleDateString(),
+                            time: new Date().toLocaleTimeString()
+                        };
+                        
+                        comments.push(comment);
+                        
+                        // Create comment element
+                        const commentElement = document.createElement('div');
+                        commentElement.style.cssText = `
+                            padding: 10px;
+                            border-bottom: 1px solid #eee;
+                            margin-bottom: 10px;
+                            animation: fadeIn 0.3s ease;
+                        `;
+                        commentElement.innerHTML = `
+                            <p style="margin: 0 0 5px 0;">${comment.text}</p>
+                            <small style="color: #666;">Posted on ${comment.date} at ${comment.time}</small>
+                        `;
+                        
+                        commentsList.appendChild(commentElement);
+                        input.value = '';
+                        
+                        // Update comment count
+                        const commentCount = comments.length;
+                        commentBtn.innerHTML = `<i class="far fa-comment"></i> ${commentCount} Comments`;
+                    }
+                });
+            });
+
+            // Add these animations to your existing style element
+            const styleSheet = document.createElement('style');
+            styleSheet.textContent += `
+                @keyframes slideDown {
+                    from { opacity: 0; transform: translateY(-10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+            `;
+            document.head.appendChild(styleSheet);
         });
     </script>
 </body>
