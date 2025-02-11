@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Fresh Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0077B6;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        /* Navbar */
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #429e46;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+        /* Checkout Progress */
+        
+        .checkout-progress {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .progress-step {
+            text-align: center;
+            padding: 10px 20px;
+            background: #f3f3f3;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .progress-step.active {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .progress-line {
+            width: 40px;
+            height: 3px;
+            background: #ccc;
+            margin: 0 10px;
+        }
+        /* Payment Form */
+        
+        .payment-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-method {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method.active {
+            border-color: #4CAF50;
+            background-color: #f0f9f0;
+        }
+        
+        .payment-method i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .card-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 15px;
+        }
+        /* Order Summary */
+        
+        .order-summary {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .summary-row.total {
+            font-weight: bold;
+            font-size: 1.2em;
+            border-top: 2px solid #ddd;
+            border-bottom: none;
+        }
+        /* Buttons */
+        
+        .pay-now-btn {
+            display: block;
+            width: 100%;
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .pay-now-btn:hover {
+            background: #45a049;
+        }
+        
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+            text-decoration: none;
+        }
+        /* Footer styles remain the same */
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .footer-section {
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        .app-links .app-button {
+            display: block;
+            background: #4CAF50;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .app-links .app-button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background-color:aqua">
+        <nav class="navbar">
+            <div class="logo">Fresh Mart</div>
+            <div class="nav-links">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="payment-page">
+        <div class="container">
+            <div class="checkout-progress">
+                <div class="progress-step">
+                    <div class="step-number">1. Shipping</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step active">
+                    <div class="step-number">2. Payment</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">3. Confirmation</div>
+                </div>
+            </div>
+
+            <div class="payment-grid">
+                <div class="payment-form">
+                    <h2>Payment Method</h2>
+                    <div class="payment-methods">
+                        <div class="payment-method active" onclick="selectPaymentMethod(this, 'Credit Card')">
+                            <i class="fas fa-credit-card"></i>
+                            <div>Credit Card</div>
+                        </div>
+                        <div class="payment-method" onclick="selectPaymentMethod(this, 'Cash on Delivery')">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div>Cash on Delivery</div>
+                        </div>
+                        <div class="payment-method" onclick="selectPaymentMethod(this, 'Net Banking')">
+                            <i class="fas fa-university"></i>
+                            <div>Net Banking</div>
+                        </div>
+                    </div>
+
+
+                    <form action="process_payment.php" method="POST" id="paymentForm">
+                        <input type="hidden" name="firstName" id="firstName">
+                        <input type="hidden" name="lastName" id="lastName">
+                        <input type="hidden" name="email" id="email">
+                        <input type="hidden" name="phone" id="phone">
+                        <input type="hidden" name="address" id="address">
+                        <input type="hidden" name="city" id="city">
+                        <input type="hidden" name="state" id="state">
+                        <input type="hidden" name="pinCode" id="pinCode">
+                        <input type="hidden" name="delivery" id="delivery">
+                        <input type="hidden" name="totalAmount" id="totalAmount">
+
+                        <!-- Hidden field to store selected payment method -->
+                        <input type="hidden" name="paymentMethod" id="paymentMethod" value="Credit Card">
+
+                        <!-- Wrap card details in a div that will be hidden for COD -->
+                        <div id="cardDetails">
+                            <div class="form-group">
+                                <label for="cardName">Name on Card</label>
+                                <input type="text" name="cardName" id="cardName">
+                            </div>
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" name="cardNumber" id="cardNumber" pattern="[0-9]{16}">
+                            </div>
+                            <div class="card-details">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" name="expiryDate" id="expiryDate" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="password" name="cvv" id="cvv" pattern="[0-9]{3,4}" maxlength="4">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="pay-now-btn">Pay Now</button>
+                    </form>
+
+                    <script>
+                        // Load user details from localStorage (Saved from Checkout Page)
+                        document.addEventListener("DOMContentLoaded", function() {
+                            document.getElementById("firstName").value = localStorage.getItem("firstName");
+                            document.getElementById("lastName").value = localStorage.getItem("lastName");
+                            document.getElementById("email").value = localStorage.getItem("email");
+                            document.getElementById("phone").value = localStorage.getItem("phone");
+                            document.getElementById("address").value = localStorage.getItem("address");
+                            document.getElementById("city").value = localStorage.getItem("city");
+                            document.getElementById("state").value = localStorage.getItem("state");
+                            document.getElementById("pinCode").value = localStorage.getItem("pinCode");
+                            document.getElementById("delivery").value = localStorage.getItem("delivery");
+                            document.getElementById("totalAmount").value = localStorage.getItem("totalAmount");
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@freshmart.com</p>
+                <p>Phone: +91 9959552795 </p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-links">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fresh Mart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function selectPaymentMethod(element, method) {
+            // Remove active class from all payment methods
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.classList.remove('active');
+            });
+
+            // Add active class to selected method
+            element.classList.add('active');
+
+            // Store selected payment method
+            document.getElementById('paymentMethod').value = method;
+
+            // Hide card fields if "Cash on Delivery" is selected
+            if (method === "Cash on Delivery") {
+                document.getElementById("cardDetails").style.display = "none";
+            } else {
+                document.getElementById("cardDetails").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

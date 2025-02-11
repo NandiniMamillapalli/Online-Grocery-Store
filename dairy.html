@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Products - Fresh Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Fresh Mart</div>
+            <div class="nav-links">
+                <a href="index.php">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="category-page dairy-page">
+        <div class="container">
+            <div class="category-header">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> &gt;
+                    <a href="products.html">Products</a> &gt;
+                    <span>Dairy Products</span>
+                </div>
+                <h1>Dairy Products</h1>
+                <p class="category-description">
+                    Discover our premium selection of dairy products. From fresh milk to artisanal cheese,
+                    we offer the finest dairy items sourced from trusted local farms.
+                </p>
+            </div>
+
+            <div class="category-content">
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Filter By</h3>
+                        <div class="filter-group">
+                            <h4>Price Range</h4>
+                            <div class="price-slider">
+                                <input type="range" id="minPrice" min="0" max="1000">
+                                <input type="range" id="maxPrice" min="0" max="1000">
+                                <div class="price-inputs">
+                                    <input type="number" id="minPriceInput" value="0">
+                                    <span>to</span>
+                                    <input type="number" id="maxPriceInput" value="1000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Type</h4>
+                            <label><input type="checkbox" value="organic"> Organic</label>
+                            <label><input type="checkbox" value="lowfat"> Low Fat</label>
+                            <label><input type="checkbox" value="sugarfree"> Sugar Free</label>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="products-section">
+                    <div class="products-grid" id="productsContainer">
+                        <!-- Products will be loaded dynamically -->
+                    </div>
+
+                    <div class="pagination">
+                        <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+                        <div class="page-numbers">
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                        </div>
+                        <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Fresh Mart</h3>
+                <p>Your trusted source for fresh groceries and quality products.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dairyProducts = products.filter(product => product.category === 'dairy');
+            displayProducts(dairyProducts);
+        });
+    </script>
+</body>
+</html>

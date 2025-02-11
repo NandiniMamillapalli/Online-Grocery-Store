@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Fresh Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0077B6;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        /* Navbar */
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #429e46;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+        /* Checkout Progress */
+        
+        .checkout-progress {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .progress-step {
+            text-align: center;
+            padding: 10px 20px;
+            background: #f3f3f3;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .progress-step.active {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .progress-line {
+            width: 40px;
+            height: 3px;
+            background: #ccc;
+            margin: 0 10px;
+        }
+        /* Form Styling */
+        
+        .checkout-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .form-group {
+            flex: 1;
+            margin: 10px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Delivery Options */
+        
+        .delivery-section {
+            margin-top: 20px;
+        }
+        
+        .delivery-options {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .delivery-option {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .delivery-option input {
+            margin-right: 10px;
+        }
+        /* Buttons */
+        
+        .continue-btn {
+            display: block;
+            width: 100%;
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .continue-btn:hover {
+            background: #45a049;
+        }
+        /* Footer */
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .footer-section {
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        .app-links .app-button {
+            display: block;
+            background: #4CAF50;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .app-links .app-button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background-color:aqua">
+        <nav class="navbar">
+            <div class="logo">Fresh Mart</div>
+            <div class="nav-links">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="checkout-page">
+        <div class="container">
+            <div class="checkout-progress">
+                <div class="progress-step active">
+                    <div class="step-number">1. Shipping</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">2. Payment</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">3. Confirmation</div>
+                </div>
+            </div>
+
+            <div class="checkout-grid">
+                <div class="checkout-form">
+                    <section class="shipping-section">
+                        <h2>Shipping Information</h2>
+                        <form id="shippingForm" action="process_checkout.php" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <select id="state" name="state" required>
+                                        <option value="">Select State</option>
+                                        <option value="AP">Andhra Pradesh</option>
+                                        <option value="TG">Telangana</option>
+                                        <option value="TN">Tamilanadu</option>
+                                        <option value="KN">Karnataka</option>
+                                        <option value="KL">Kerala</option>
+                                        <!-- Add more states -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode">Pin Code</label>
+                                    <input type="text" id="pinCode" name="pinCode" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="deliveryInstructions">Delivery Instructions (Optional)</label>
+                                <textarea id="deliveryInstructions" name="deliveryInstructions" placeholder="feel free to tell us your delivery instruction..! so that everythin goes well.." rows="3"></textarea>
+                            </div>
+
+                            <div class="save-info">
+                                <label>
+                                    <input type="checkbox" checked name="saveInfo">
+                                    Save this information for next time
+                                </label>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="delivery-section">
+                        <h2>Delivery Options</h2>
+                        <div class="delivery-options">
+                            <div class="delivery-option">
+                                <input type="radio" name="delivery" id="standard" checked>
+                                <label for="standard">
+                                    <div class="option-info">
+                                        <span class="option-name">Standard Delivery</span>
+                                        <span class="option-time">2-3 business days</span>
+                                    </div>
+                                    <span class="option-price">$4.99</span>
+                                </label>
+                            </div>
+                            <div class="delivery-option">
+                                <input type="radio" name="delivery" id="express">
+                                <label for="express">
+                                    <div class="option-info">
+                                        <span class="option-name">Express Delivery</span>
+                                        <span class="option-time">Next business day</span>
+                                    </div>
+                                    <span class="option-price">$9.99</span>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <button class="continue-btn" onclick="proceedToPayment()">
+                        Continue to Payment
+                    </button>
+                </div>
+
+                <!-- <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-items">
+                        <div class="summary-item">
+                            <div class="item-info">
+                                <div>
+                                    <h4>Organic Bananas</h4>
+                                    <p>Qty: 1</p>
+                                </div>
+                            </div>
+                            <span class="item-price">$4.99</span>
+                        </div>
+                        <div class="summary-item">
+                            <div class="item-info">
+                                <div>
+                                    <h4>Fresh Apples</h4>
+                                    <p>Qty: 2</p>
+                                </div>
+                            </div>
+                            <span class="item-price">$7.98</span>
+                        </div>
+                        <div class="summary-item">
+                            <div class="item-info">
+                                <div>
+                                    <h4>Organic Milk</h4>
+                                    <p>Qty: 1</p>
+                                </div>
+                            </div>
+                            <span class="item-price">$5.99</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$18.96</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>$4.99</span>
+                        </div>
+                        <div class="summary-row discount">
+                            <span>Discount</span>
+                            <span>-$1.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>$22.95</span>
+                        </div>
+                    </div>
+
+                    <div class="promo-code">
+                        <input type="text" placeholder="Enter promo code">
+                        <button>Apply</button>
+                    </div>
+
+                    <div class="secure-checkout">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+
+                    <div class="back-to-cart">
+                        <a href="cart.html">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Cart
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@freshmart.com</p>
+                <p>Phone: +91 9959552795 </p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-links">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fresh Mart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function proceedToPayment() {
+            // Validate form
+            const form = document.getElementById('shippingForm');
+            if (form.checkValidity()) {
+                form.submit();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+    </script>
+</body>
+
+</html>

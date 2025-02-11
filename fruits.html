@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Fruits - Fresh Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Fresh Mart</div>
+            <div class="nav-links">
+                <a href="index.php">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="category-page fruits-page">
+        <div class="container">
+            <div class="category-header">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> &gt;
+                    <a href="products.html">Products</a> &gt;
+                    <span>Fresh Fruits</span>
+                </div>
+                <h1>Fresh Fruits</h1>
+                <p class="category-description">
+                    Discover our wide selection of fresh, hand-picked fruits. From local seasonal favorites to exotic varieties,
+                    we ensure the highest quality and freshness in every piece.
+                </p>
+            </div>
+
+            <div class="category-content">
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Filter By</h3>
+                        
+                        <div class="filter-group">
+                            <h4>Price Range</h4>
+                            <div class="price-slider">
+                                <input type="range" min="0" max="50" value="25" class="price-range">
+                                <div class="price-inputs">
+                                    <input type="number" id="minPrice" placeholder="Min" min="0">
+                                    <span>-</span>
+                                    <input type="number" id="maxPrice" placeholder="Max" max="50">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Type</h4>
+                            <label><input type="checkbox" value="seasonal"> Seasonal</label>
+                            <label><input type="checkbox" value="organic"> Organic</label>
+                            <label><input type="checkbox" value="exotic"> Exotic</label>
+                            <label><input type="checkbox" value="local"> Local</label>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Availability</h4>
+                            <label><input type="checkbox" value="inStock"> In Stock</label>
+                            <label><input type="checkbox" value="onSale"> On Sale</label>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Sort By</h4>
+                            <select id="sortSelect">
+                                <option value="popular">Most Popular</option>
+                                <option value="priceLow">Price: Low to High</option>
+                                <option value="priceHigh">Price: High to Low</option>
+                                <option value="nameAZ">Name: A to Z</option>
+                                <option value="nameZA">Name: Z to A</option>
+                            </select>
+                        </div>
+
+                        <button class="apply-filters-btn">Apply Filters</button>
+                        <button class="clear-filters-btn">Clear All</button>
+                    </div>
+                </aside>
+
+                <div class="products-section">
+                    <div class="products-grid">
+                        <!-- Apple Product Card -->
+                        <div class="product-card">
+                            <div class="product-badge sale">Sale</div>
+                            <img src="https://images.unsplash.com/photo-1619546813926-a78fa6372cd2" alt="Fresh Apples">
+                            <div class="product-info">
+                                <h3>Fresh Organic Apples</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(128)</span>
+                                </div>
+                                <p class="product-price">
+                                    <span class="current-price">$3.99</span>
+                                    <span class="original-price">$4.99</span>
+                                    <span class="per-unit">per lb</span>
+                                </p>
+                                <div class="product-actions">
+                                    <button class="add-to-cart" onclick="addToCart(1)">
+                                        Add to Cart
+                                    </button>
+                                    <button class="add-to-wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Banana Product Card -->
+                        <div class="product-card">
+                            <div class="product-badge organic">Organic</div>
+                            <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24" alt="Organic Bananas">
+                            <div class="product-info">
+                                <h3>Organic Bananas</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(95)</span>
+                                </div>
+                                <p class="product-price">
+                                    <span class="current-price">$2.99</span>
+                                    <span class="per-unit">per bunch</span>
+                                </p>
+                                <div class="product-actions">
+                                    <button class="add-to-cart" onclick="addToCart(2)">
+                                        Add to Cart
+                                    </button>
+                                    <button class="add-to-wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Orange Product Card -->
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9" alt="Fresh Oranges">
+                            <div class="product-info">
+                                <h3>Sweet Oranges</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(76)</span>
+                                </div>
+                                <p class="product-price">
+                                    <span class="current-price">$4.49</span>
+                                    <span class="per-unit">per lb</span>
+                                </p>
+                                <div class="product-actions">
+                                    <button class="add-to-cart" onclick="addToCart(3)">
+                                        Add to Cart
+                                    </button>
+                                    <button class="add-to-wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Strawberry Product Card -->
+                        <div class="product-card">
+                            <div class="product-badge new">New</div>
+                            <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6" alt="Fresh Strawberries">
+                            <div class="product-info">
+                                <h3>Fresh Strawberries</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(142)</span>
+                                </div>
+                                <p class="product-price">
+                                    <span class="current-price">$5.99</span>
+                                    <span class="per-unit">per box</span>
+                                </p>
+                                <div class="product-actions">
+                                    <button class="add-to-cart" onclick="addToCart(4)">
+                                        Add to Cart
+                                    </button>
+                                    <button class="add-to-wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mango Product Card -->
+                        <div class="product-card">
+                            <div class="product-badge exotic">Exotic</div>
+                            <img src="https://images.unsplash.com/photo-1553279768-865429fa0078" alt="Fresh Mangoes">
+                            <div class="product-info">
+                                <h3>Sweet Mangoes</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(89)</span>
+                                </div>
+                                <p class="product-price">
+                                    <span class="current-price">$6.99</span>
+                                    <span class="per-unit">per piece</span>
+                                </p>
+                                <div class="product-actions">
+                                    <button class="add-to-cart" onclick="addToCart(5)">
+                                        Add to Cart
+                                    </button>
+                                    <button class="add-to-wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grape Product Card -->
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f" alt="Fresh Grapes">
+                            <div class="product-info">
+                                <h3>Fresh Grapes</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(64)</span>
+                                </div>
+                                <p class="product-price">
+                                    <span class="current-price">$4.99</span>
+                                    <span class="per-unit">per lb</span>
+                                </p>
+                                <div class="product-actions">
+                                    <button class="add-to-cart" onclick="addToCart(6)">
+                                        Add to Cart
+                                    </button>
+                                    <button class="add-to-wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+                        <div class="page-numbers">
+                            <span class="active">1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>...</span>
+                            <span>8</span>
+                        </div>
+                        <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@freshmart.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-links">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fresh Mart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter functionality
+        document.querySelector('.apply-filters-btn').addEventListener('click', function() {
+            // In a real application, this would filter the products based on selected criteria
+            alert('Filters applied!');
+        });
+
+        document.querySelector('.clear-filters-btn').addEventListener('click', function() {
+            // Clear all checkboxes and reset price range
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            document.getElementById('minPrice').value = '';
+            document.getElementById('maxPrice').value = '';
+            document.querySelector('.price-range').value = 25;
+        });
+
+        // Sorting functionality
+        document.getElementById('sortSelect').addEventListener('change', function() {
+            // In a real application, this would sort the products
+            alert('Sorting products by: ' + this.value);
+        });
+
+        // Wishlist functionality
+        document.querySelectorAll('.add-to-wishlist').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const icon = this.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+            });
+        });
+    </script>
+</body>
+</html>
